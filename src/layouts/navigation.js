@@ -4,11 +4,11 @@ const pages = [
     href: '/',
   },
   {
-    title: 'Create NFT',
+    title: 'Create Material NFT',
     href: '/create',
   },
   {
-    title: 'All NFTs',
+    title: 'All Material NFTs',
     href: '/allNfts',
   },
 ];

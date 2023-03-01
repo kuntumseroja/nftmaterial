@@ -9,7 +9,7 @@ import PortfolioGrid from 'components/PortfolioGrid';
 
 import axios from 'axios';
 import { ethers } from 'ethers';
-import Marketplace from 'contracts/Marketplace.sol/Marketplace.json';
+import Material from 'contracts/Material.sol/Material.json';
 
 const AllNfts = () => {
   const theme = useTheme();
@@ -22,11 +22,11 @@ const AllNfts = () => {
 
   async function loadNFTs() {
     const provider = new ethers.providers.JsonRpcProvider(
-      'https://rpc-mumbai.maticvigil.com/',
+      'https://nd-622-684-281.p2pify.com/858b7550fbc85539b5e207f7258f40c0/',
     );
     const marketContract = new ethers.Contract(
       process.env.MARKETPLACE_ADDRESS,
-      Marketplace.abi,
+      Material.abi,
       provider,
     );
     const data = await marketContract.fetchMarketItems();

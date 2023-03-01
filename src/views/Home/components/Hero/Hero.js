@@ -31,7 +31,7 @@ const Hero = () => {
                   fontWeight: 700,
                 }}
               >
-                Discover, collect, and sell extraordinary NFTs
+              Create, collect, and sell extraordinary Material NFTs
               </Typography>
             </Box>
           </Box>

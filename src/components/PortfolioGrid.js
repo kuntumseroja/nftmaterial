@@ -15,7 +15,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
-import Marketplace from 'contracts/Marketplace.sol/Marketplace.json';
+import Material from 'contracts/Material.sol/Material.json';
 
 const PortfolioGrid = ({ data = [], buttonShow }) => {
   const theme = useTheme();
@@ -31,7 +31,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
     const signer = provider.getSigner();
     const marketContract = new ethers.Contract(
       process.env.MARKETPLACE_ADDRESS,
-      Marketplace.abi,
+      Material.abi,
       signer,
     );
     /* user will be prompted to pay the asking price to complete the transaction */

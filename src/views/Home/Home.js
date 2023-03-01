@@ -11,7 +11,7 @@ import FeaturedNfts from './components/FeaturedNfts';
 
 import axios from 'axios';
 import { ethers } from 'ethers';
-import Marketplace from 'contracts/Marketplace.sol/Marketplace.json';
+import Material from 'contracts/Material.sol/Material.json';
 
 const Home = () => {
   const theme = useTheme();
@@ -24,11 +24,12 @@ const Home = () => {
 
   async function loadNFTs() {
     const provider = new ethers.providers.JsonRpcProvider(
-      'https://rpc-mumbai.maticvigil.com',
+      process.env.MUMBAI_URL,
     );
     const marketContract = new ethers.Contract(
-      process.env.MARKETPLACE_ADDRESS,
-      Marketplace.abi,
+      '0x977685694c66df1ede6c2807cc0eefc22cad1de5',
+      // process.env.MARKETPLACE_ADDRESS,
+      Material.abi,
       provider,
     );
     const data = await marketContract.fetchMarketItems();

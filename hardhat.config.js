@@ -18,7 +18,7 @@ module.exports = {
   networks: {
     mumbai: {
       url:
-        `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_API}` ||
+        `https://nd-622-684-281.p2pify.com/858b7550fbc85539b5e207f7258f40c0` ||
         '',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],

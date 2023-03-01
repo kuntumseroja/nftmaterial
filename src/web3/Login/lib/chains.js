@@ -199,7 +199,7 @@ const supportedChains = [
     network: 'mumbai',
     chain_id: 80001,
     network_id: 80001,
-    rpc_url: 'https://rpc-mumbai.maticvigil.com/',
+    rpc_url: 'https://nd-622-684-281.p2pify.com/858b7550fbc85539b5e207f7258f40c0/',
     native_currency: {
       symbol: 'MATIC',
       name: 'MATIC',

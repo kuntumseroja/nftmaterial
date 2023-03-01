@@ -20,7 +20,7 @@ import web3 from 'web3';
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import { create } from 'ipfs-http-client';
-import Marketplace from 'contracts/Marketplace.sol/Marketplace.json';
+import Material from 'contracts/Material.sol/Material.json';
 
 const validationSchema = yup.object({
   name: yup
@@ -99,7 +99,7 @@ const Form = () => {
       const price = web3.utils.toWei(formik.values.price, 'ether');
       let contract = new ethers.Contract(
         process.env.MARKETPLACE_ADDRESS,
-        Marketplace.abi,
+        Material.abi,
         signer,
       );
       let listingPrice = await contract.getListingPrice();
@@ -232,7 +232,7 @@ const Form = () => {
               sx={{ marginBottom: 2 }}
               fontWeight={700}
             >
-              NFT Name
+              Material NFT Name
             </Typography>
             <TextField
               label="Name of your NFT *"
