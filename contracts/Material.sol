@@ -38,7 +38,7 @@ contract Material is ERC721URIStorage, ReentrancyGuard {
     owner = payable(msg.sender);
   }
 
-  /* Mints a token and lists it in the marketplace */
+  /* Mints a token and lists it in the material */
   function createToken(string memory tokenURI, uint256 price)
     public
     payable
@@ -69,7 +69,7 @@ contract Material is ERC721URIStorage, ReentrancyGuard {
     emit MarketItemCreated(tokenId, msg.sender, address(this), price, false);
   }
 
-  //* Creates the sale of a marketplace item */
+  //* Creates the sale of a material item */
   /* Transfers ownership of the item, as well as funds between parties */
   function createMarketSale(uint256 tokenId) public payable {
     uint256 price = idToMarketItem[tokenId].price;
@@ -173,7 +173,7 @@ contract Material is ERC721URIStorage, ReentrancyGuard {
   function updateListingPrice(uint256 _listingPrice) public payable {
     require(
       owner == msg.sender,
-      'Only marketplace owner can update listing price.'
+      'Only material owner can update listing price.'
     );
     listingPrice = _listingPrice;
   }

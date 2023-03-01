@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
           <meta
             name="description"
-            content="A nft marketplace to trade digital assets."
+            content="A nft material to trade digital assets."
           />
           <meta
             name="robots"
@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:description"
-            content="A NFT marketplace to trade your digital assets."
+            content="A NFT material to trade your digital assets."
           />
           <meta
             property="og:url"
