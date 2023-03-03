@@ -232,7 +232,7 @@ const Form = () => {
               sx={{ marginBottom: 2 }}
               fontWeight={700}
             >
-              Material NFT Name
+              Material Data NFT Name
             </Typography>
             <TextField
               label="Name of your NFT *"

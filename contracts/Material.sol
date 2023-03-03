@@ -38,7 +38,7 @@ contract Material is ERC721URIStorage, ReentrancyGuard {
     owner = payable(msg.sender);
   }
 
-  /* Mints a token and lists it in the material */
+  /* Mints a token and lists it in the material data */
   function createToken(string memory tokenURI, uint256 price)
     public
     payable

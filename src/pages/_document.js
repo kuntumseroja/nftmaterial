@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
           <meta
             name="description"
-            content="A nft material to trade digital assets."
+            content="A nft material data as digital assets."
           />
           <meta
             name="robots"
