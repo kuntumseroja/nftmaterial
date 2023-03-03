@@ -48,7 +48,7 @@ const Home = () => {
           image: meta.data.image,
           name: meta.data.name,
           description: meta.data.description,
-          address: meta.data.address,
+          address: meta.data.image,
         };
         return item;
       }),
