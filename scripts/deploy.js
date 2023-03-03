@@ -4,7 +4,7 @@ async function main() {
   const NFTMarket = await hre.ethers.getContractFactory('Material');
   const nftMarket = await NFTMarket.deploy();
   await nftMarket.deployed();
-  console.log('nftMarket deployed to:', nftMarket.address);
+  console.log('nftMaterial deployed to:', nftMarket.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

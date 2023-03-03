@@ -11,6 +11,7 @@ import FeaturedNfts from './components/FeaturedNfts';
 
 import axios from 'axios';
 import { ethers } from 'ethers';
+// import Material from 'contracts/Material.sol/Material.json';
 import Material from 'contracts/Material.sol/Material.json';
 
 const Home = () => {
@@ -27,8 +28,8 @@ const Home = () => {
       process.env.MUMBAI_URL,
     );
     const marketContract = new ethers.Contract(
-      '0x977685694c66df1ede6c2807cc0eefc22cad1de5',
-      // process.env.MARKETPLACE_ADDRESS,
+      // '0x977685694c66df1ede6c2807cc0eefc22cad1de5',
+      process.env.MARKETPLACE_ADDRESS,
       Material.abi,
       provider,
     );

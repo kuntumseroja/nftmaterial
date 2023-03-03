@@ -18,7 +18,7 @@ module.exports = {
   networks: {
     mumbai: {
       url:
-        `https://nd-622-684-281.p2pify.com/858b7550fbc85539b5e207f7258f40c0` ||
+        process.env.MUMBAI_URL ||
         '',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
