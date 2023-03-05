@@ -47,7 +47,7 @@ const Hero = () => {
               <Box
                 component={'img'}
                 src={
-                  'https://images.unsplash.com/photo-1654792393225-3e8a53d124d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80'
+                  'https://cdn.discordapp.com/attachments/1045347503865856012/1081963552442679357/priyoj_Carbon_fibers_generally_have_excellent_tensile_propertie_7e7d71fc-9d4f-497e-b56f-b45e64bb3b8e.png'
                 }
                 width={1}
                 height={1}
