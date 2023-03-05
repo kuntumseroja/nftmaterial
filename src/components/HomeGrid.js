@@ -80,6 +80,30 @@ const HomeGrid = ({ data = [] }) => {
                   <Typography color={'text.secondary'}>
                     {item.description}
                   </Typography>
+                  <Typography color={'text.secondary'}>
+                    Domain: {item.mtdomain}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Group: {item.mtgroup}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 1: {item.mtclass1}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 2: {item.mtclass2}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 3: {item.mtclass3}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 4: {item.mtclass4}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 5: {item.mtclass5}
+                  </Typography>
+                  <Typography color={'text.secondary'}>
+                    Material Class 6: {item.mtclass6}
+                  </Typography>
                 </Box>
               </Card>
             ))[0]

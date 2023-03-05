@@ -34,6 +34,46 @@ const validationSchema = yup.object({
     .trim()
     .max(1000, 'Should be less than 1000 chars')
     .required('Please write description'),
+  mtdomain: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 100 chars')
+    .required('Please write description'),  
+  mtgroup: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 100 chars')
+    .required('Please write description'),  
+  mtclass1: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),  
+  mtclass2: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),  
+  mtclass3: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),  
+  mtclass4: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),  
+  mtclass5: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),  
+  mtclass6: yup
+    .string()
+    .trim()
+    .max(1000, 'Should be less than 1000 chars')
+    .required('Please write description'),
   price: yup
     .string()
     .min(0, 'Price should be minimum 0')
@@ -154,8 +194,8 @@ const Form = () => {
   }
 
   async function createMarket() {
-    const { name, description, price, address } = formik.values;
-    if (!name || !description || !price || !fileUrl) return;
+    const { name, description, mtdomain, mtgroup, mtclass1, mtclass2, mtclass3, mtclass4, mtclass5, mtclass6, price, address } = formik.values;
+    if (!name || !description || !mtdomain || !mtgroup || !mtclass1 || !mtclass2 || !mtclass3 || !mtclass4 || !mtclass5 || !mtclass6 || !price || !fileUrl) return;
     /* first, upload to IPFS */
     const data = JSON.stringify({
       name,
@@ -286,7 +326,7 @@ const Form = () => {
               }
             />
           </Grid>
-{/* //field new start per row 3 */}
+
           <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -485,7 +525,7 @@ const Form = () => {
               helperText={formik.touched.address && formik.errors.address}
             />
           </Grid>
-/* additional form  */
+
 
 
           <Grid item container xs={12}>

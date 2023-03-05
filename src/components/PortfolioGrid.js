@@ -124,6 +124,54 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                       {item.description}
                     </Typography>
                   </Box>
+
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                     Domain: {item.mtdomain}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                      Group: {item.mtgroup}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                      Material Class 1: {item.mtclass1}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 1:{item.mtclass1}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 2:{item.mtclass2}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 3:{item.mtclass3}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 4:{item.mtclass4}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 5:{item.mtclass5}
+                    </Typography>
+                  </Box>
+                  <Box display={'flex'} alignItems={'center'} marginY={2}>
+                    <Typography variant={'subtitle2'} color="text.secondary">
+                    Material Class 6: {item.mtclass6}
+                    </Typography>
+                  </Box>
+               
+
                   <Box display={'flex'} alignItems={'center'}>
                     <Box
                       component={'svg'}
