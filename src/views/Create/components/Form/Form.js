@@ -52,6 +52,14 @@ const Form = () => {
     initialValues: {
       name: '',
       description: '',
+      mtdomain: '',
+      mtgroup: '',
+      mtclass1: '',
+      mtclass2: '',
+      mtclass3: '',
+      mtclass4: '',
+      mtclass5: '',
+      mtclass6: '',
       price: '',
       address: '',
     },
@@ -152,6 +160,14 @@ const Form = () => {
     const data = JSON.stringify({
       name,
       description,
+      mtdomain,
+      mtgroup,
+      mtclass1,
+      mtclass2,
+      mtclass3,
+      mtclass4,
+      mtclass5,
+      mtclass6,
       address,
       image: fileUrl,
     });
@@ -270,6 +286,167 @@ const Form = () => {
               }
             />
           </Grid>
+//field new start per row 3
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Domain
+            </Typography>
+            <TextField
+              label="Phase at room temperature for majority of materials in group"
+              variant="outlined"
+              name={'mtdomain'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtdomain}
+              error={formik.touched.mtdomain && Boolean(formik.errors.mtdomain)}
+              helperText={formik.touched.mtdomain && formik.errors.mtdomain}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Group
+            </Typography>
+            <TextField
+              label="Group of periodic table to which element of simple substance belongs"
+              variant="outlined"
+              name={'mtgroup'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtgroup}
+              error={formik.touched.mtgroup && Boolean(formik.errors.mtgroup)}
+              helperText={formik.touched.mtgroup && formik.errors.mtgroup}
+            />
+          </Grid> 
+//end row3 
+//start row 4
+            <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 1
+            </Typography>
+            <TextField
+              label="Name of material group having similar material character and similar behavior of properties"
+              variant="outlined"
+              name={'mtclass1'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass1}
+              error={formik.touched.mtclass1 && Boolean(formik.errors.mtclass1)}
+              helperText={formik.touched.mtclass1 && formik.errors.mtclass1}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 2
+            </Typography>
+            <TextField
+              label="Substance name, Chemical formula, CAS registry number, IUPAC Name"
+              variant="outlined"
+              name={'mtclass2'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass2}
+              error={formik.touched.mtclass2 && Boolean(formik.errors.mtclass2)}
+              helperText={formik.touched.mtclass2 && formik.errors.mtclass2}
+            />
+          </Grid> 
+//end row 4
+//start row 5
+            <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 3
+            </Typography>
+            <TextField
+              label="Material name, crystal structure, phase, application field, form"
+              variant="outlined"
+              name={'mtclass3'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass3}
+              error={formik.touched.mtclass3 && Boolean(formik.errors.mtclass3)}
+              helperText={formik.touched.mtclass3 && formik.errors.mtclass3}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 4
+            </Typography>
+            <TextField
+              label="Grade of commercial material, Material standard, chemical composition, RM/CRM code, main material manufacturing process such as equipment"
+              variant="outlined"
+              name={'mtclass4'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass4}
+              error={formik.touched.mtclass4 && Boolean(formik.errors.mtclass4)}
+              helperText={formik.touched.mtclass4 && formik.errors.mtclass4}
+            />
+          </Grid> 
+//end row 5
+//start row 6
+<Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 5
+            </Typography>
+            <TextField
+              label="Lot name, information related to fine material manufacturing process such as pre- and post -processes"
+              variant="outlined"
+              name={'mtclass5'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass5}
+              error={formik.touched.mtclass5 && Boolean(formik.errors.mtclass5)}
+              helperText={formik.touched.mtclass5 && formik.errors.mtclass5}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography
+              variant={'subtitle2'}
+              sx={{ marginBottom: 2 }}
+              fontWeight={700}
+            >
+              Material Class 6
+            </Typography>
+            <TextField
+              label="Specimen name, specimen shape and size"
+              variant="outlined"
+              name={'mtclass6'}
+              fullWidth
+              onChange={formik.handleChange}
+              value={formik.values?.mtclass6}
+              error={formik.touched.mtclass6 && Boolean(formik.errors.mtclass6)}
+              helperText={formik.touched.mtclass6 && formik.errors.mtclass6}
+            />
+          </Grid> 
+//end row 6
+
           <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -308,6 +485,9 @@ const Form = () => {
               helperText={formik.touched.address && formik.errors.address}
             />
           </Grid>
+/* additional form  */
+
+
           <Grid item container xs={12}>
             <Box
               display="flex"
