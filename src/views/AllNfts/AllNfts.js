@@ -44,6 +44,14 @@ const AllNfts = () => {
           image: meta.data.image,
           name: meta.data.name,
           description: meta.data.description,
+          mtdomain: meta.data.mtdomain,
+          mtgroup: meta.data.mtgroup,
+          mtclass1: meta.data.mtclass1,
+          mtclass2: meta.data.mtclass2,
+          mtclass3: meta.data.mtclass3,
+          mtclass4: meta.data.mtclass4,
+          mtclass5: meta.data.mtclass5,
+          mtclass6: meta.data.mtclass6,
           address: meta.data.image,
         };
         return item;
