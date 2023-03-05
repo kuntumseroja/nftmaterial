@@ -286,7 +286,7 @@ const Form = () => {
               }
             />
           </Grid>
-//field new start per row 3
+{/* //field new start per row 3 */}
           <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -325,8 +325,8 @@ const Form = () => {
               helperText={formik.touched.mtgroup && formik.errors.mtgroup}
             />
           </Grid> 
-//end row3 
-//start row 4
+{/* //end row3  */}
+{/* //start row 4 */}
             <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -365,8 +365,8 @@ const Form = () => {
               helperText={formik.touched.mtclass2 && formik.errors.mtclass2}
             />
           </Grid> 
-//end row 4
-//start row 5
+{/* //end row 4 */}
+{/* //start row 5 */}
             <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -405,8 +405,8 @@ const Form = () => {
               helperText={formik.touched.mtclass4 && formik.errors.mtclass4}
             />
           </Grid> 
-//end row 5
-//start row 6
+{/* //end row 5
+//start row 6 */}
 <Grid item xs={12} sm={6}>
             <Typography
               variant={'subtitle2'}
@@ -445,7 +445,7 @@ const Form = () => {
               helperText={formik.touched.mtclass6 && formik.errors.mtclass6}
             />
           </Grid> 
-//end row 6
+{/* //end row 6 */}
 
           <Grid item xs={12} sm={6}>
             <Typography
