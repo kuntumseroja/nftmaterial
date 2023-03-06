@@ -157,7 +157,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Grade:{item.mtclass4}
+                    Material Grade:{item.grade}
                     </Typography>
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
