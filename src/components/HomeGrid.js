@@ -96,13 +96,13 @@ const HomeGrid = ({ data = [] }) => {
                     Material Class 3: {item.mtclass3}
                   </Typography>
                   <Typography color={'text.secondary'}>
-                    Material Class 4: {item.mtclass4}
+                    Material Grade: {item.grade}
                   </Typography>
                   <Typography color={'text.secondary'}>
-                    Material Class 5: {item.mtclass5}
+                    Material Lot: {item.mtlot}
                   </Typography>
                   <Typography color={'text.secondary'}>
-                    Material Class 6: {item.mtclass6}
+                    Material Specimen: {item.mtspecimen}
                   </Typography>
                 </Box>
               </Card>

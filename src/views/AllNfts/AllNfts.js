@@ -49,9 +49,9 @@ const AllNfts = () => {
           mtclass1: meta.data.mtclass1,
           mtclass2: meta.data.mtclass2,
           mtclass3: meta.data.mtclass3,
-          mtclass4: meta.data.mtclass4,
-          mtclass5: meta.data.mtclass5,
-          mtclass6: meta.data.mtclass6,
+          grade: meta.data.grade,
+          mtlot: meta.data.mtlot,
+          mtspecimen: meta.data.mtspecimen,
           address: meta.data.image,
         };
         return item;

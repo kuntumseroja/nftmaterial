@@ -157,17 +157,17 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Class 4:{item.mtclass4}
+                    Material Grade:{item.mtclass4}
                     </Typography>
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Class 5:{item.mtclass5}
+                    Material Lot:{item.mtlot}
                     </Typography>
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Class 6: {item.mtclass6}
+                    Material Specimen: {item.mtspecimen}
                     </Typography>
                   </Box>
                

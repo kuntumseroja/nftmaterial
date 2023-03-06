@@ -59,17 +59,17 @@ const validationSchema = yup.object({
     .trim()
     .max(1000, 'Should be less than 1000 chars')
     .required('Please write description'),  
-  mtclass4: yup
+  grade: yup
     .string()
     .trim()
     .max(1000, 'Should be less than 1000 chars')
     .required('Please write description'),  
-  mtclass5: yup
+  mtlot: yup
     .string()
     .trim()
     .max(1000, 'Should be less than 1000 chars')
     .required('Please write description'),  
-  mtclass6: yup
+  mtspecimen: yup
     .string()
     .trim()
     .max(1000, 'Should be less than 1000 chars')
@@ -97,9 +97,9 @@ const Form = () => {
       mtclass1: '',
       mtclass2: '',
       mtclass3: '',
-      mtclass4: '',
-      mtclass5: '',
-      mtclass6: '',
+      grade: '',
+      mtlot: '',
+      mtspecimen: '',
       price: '',
       address: '',
     },
@@ -194,8 +194,8 @@ const Form = () => {
   }
 
   async function createMarket() {
-    const { name, description, mtdomain, mtgroup, mtclass1, mtclass2, mtclass3, mtclass4, mtclass5, mtclass6, price, address } = formik.values;
-    if (!name || !description || !mtdomain || !mtgroup || !mtclass1 || !mtclass2 || !mtclass3 || !mtclass4 || !mtclass5 || !mtclass6 || !price || !fileUrl) return;
+    const { name, description, mtdomain, mtgroup, mtclass1, mtclass2, mtclass3, grade, mtlot, mtspecimen, price, address } = formik.values;
+    if (!name || !description || !mtdomain || !mtgroup || !mtclass1 || !mtclass2 || !mtclass3 || !grade || !mtlot || !mtspecimen || !price || !fileUrl) return;
     /* first, upload to IPFS */
     const data = JSON.stringify({
       name,
@@ -205,9 +205,9 @@ const Form = () => {
       mtclass1,
       mtclass2,
       mtclass3,
-      mtclass4,
-      mtclass5,
-      mtclass6,
+      grade,
+      mtlot,
+      mtspecimen,
       address,
       image: fileUrl,
     });
@@ -432,17 +432,17 @@ const Form = () => {
               sx={{ marginBottom: 2 }}
               fontWeight={700}
             >
-              Material Class 4
+              Material Grade
             </Typography>
             <TextField
               label="Grade of commercial material, Material standard, chemical composition, RM/CRM code, main material manufacturing process such as equipment"
               variant="outlined"
-              name={'mtclass4'}
+              name={'grade'}
               fullWidth
               onChange={formik.handleChange}
-              value={formik.values?.mtclass4}
-              error={formik.touched.mtclass4 && Boolean(formik.errors.mtclass4)}
-              helperText={formik.touched.mtclass4 && formik.errors.mtclass4}
+              value={formik.values?.grade}
+              error={formik.touched.grade && Boolean(formik.errors.grade)}
+              helperText={formik.touched.grade && formik.errors.grade}
             />
           </Grid> 
 {/* //end row 5
@@ -453,17 +453,17 @@ const Form = () => {
               sx={{ marginBottom: 2 }}
               fontWeight={700}
             >
-              Material Class 5
+              Material Lot
             </Typography>
             <TextField
               label="Lot name, information related to fine material manufacturing process such as pre- and post -processes"
               variant="outlined"
-              name={'mtclass5'}
+              name={'mtlot'}
               fullWidth
               onChange={formik.handleChange}
-              value={formik.values?.mtclass5}
-              error={formik.touched.mtclass5 && Boolean(formik.errors.mtclass5)}
-              helperText={formik.touched.mtclass5 && formik.errors.mtclass5}
+              value={formik.values?.mtlot}
+              error={formik.touched.mtlot && Boolean(formik.errors.mtlot)}
+              helperText={formik.touched.mtlot && formik.errors.mtlot}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -472,17 +472,17 @@ const Form = () => {
               sx={{ marginBottom: 2 }}
               fontWeight={700}
             >
-              Material Class 6
+              Material Specimen
             </Typography>
             <TextField
               label="Specimen name, specimen shape and size"
               variant="outlined"
-              name={'mtclass6'}
+              name={'mtspecimen'}
               fullWidth
               onChange={formik.handleChange}
-              value={formik.values?.mtclass6}
-              error={formik.touched.mtclass6 && Boolean(formik.errors.mtclass6)}
-              helperText={formik.touched.mtclass6 && formik.errors.mtclass6}
+              value={formik.values?.mtspecimen}
+              error={formik.touched.mtspecimen && Boolean(formik.errors.mtspecimen)}
+              helperText={formik.touched.mtspecimen && formik.errors.mtspecimen}
             />
           </Grid> 
 {/* //end row 6 */}
