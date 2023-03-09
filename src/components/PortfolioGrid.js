@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import LinkIcon from '@mui/icons-material/Link';
 import Link from '@mui/material/Link';
+import Papa from "papaparse";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 import Web3Modal from 'web3modal';
@@ -119,6 +120,11 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   >
                     {item.name}
                   </Typography>
+                  <Typography variant={'subtitle2'} color="text.secondary">
+                      <Link href={`https://mumbai.polygonscan.com/address/${item.seller}`} underline="none">
+                        Link to creator address
+                      </Link>
+                  </Typography>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
                       {item.description}
@@ -191,6 +197,8 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                       </Link>
                     </Typography>
                   </Box>
+
+                  
                   <CardActions sx={{ justifyContent: 'flex-end' }}>
                     {buttonShow && (
                       <Button

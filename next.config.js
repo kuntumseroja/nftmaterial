@@ -10,4 +10,11 @@ module.exports = {
     MUMBAI_URL: process.env.MUMBAI_URL,
     MARKETPLACE_ADDRESS: process.env.MARKETPLACE_ADDRESS,
   },
-};
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+}
+}

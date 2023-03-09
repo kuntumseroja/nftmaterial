@@ -44,6 +44,7 @@ export default function CreateItem() {
           seller: i.seller,
           owner: i.owner,
           image: meta.data.image,
+          address: meta.data.image,
           tokenURI,
         };
         return item;

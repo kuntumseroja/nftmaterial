@@ -21,6 +21,7 @@ import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import { create } from 'ipfs-http-client';
 import Material from 'contracts/Material.sol/Material.json';
+import Papa from "papaparse";
 
 const validationSchema = yup.object({
   name: yup
@@ -102,6 +103,7 @@ const Form = () => {
       mtspecimen: '',
       price: '',
       address: '',
+      
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
@@ -109,7 +111,7 @@ const Form = () => {
       createMarket();
     },
   });
-
+  
   const [open, setOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [loading, setLoading] = React.useState(false);
@@ -117,6 +119,12 @@ const Form = () => {
   const [dialogBoxOpen, setDialogBoxOpen] = useState(false);
   const [hash, setHash] = useState('');
   const fileInputRef = useRef(null);
+  
+  const [parsedData, setParsedData] = useState([]);
+  // //State to store table Column name
+  const [tableRows, setTableRows] = useState([]);
+  // //State to store the values
+  const [values, setValues] = useState([]);
 
   const projectId = process.env.INFURA_IPFS_ID;
   const projectSecret = process.env.INFURA_IPFS_SECRET;
@@ -176,16 +184,58 @@ const Form = () => {
     if (!fileUrl) return setAlertOpen(true);
   }
 
-  async function onChange(e) {
+  // async function twoCalls = e => {
+  //   this.upload(e)
+  //   this.parsing()
+  // }
+
+  async function parsing1(e){
+    // const [parsedData, setParsedData] = useState([]);
+
+    // //State to store table Column name
+    // const [tableRows, setTableRows] = useState([]);
+  
+    // //State to store the values
+    // const [values, setValues] = useState([]);
+  Papa.parse(e.target.files[0], {
+    delimiter: ";",
+    header: true,
+    skipEmptyLines: true,
+    complete: function (results) {
+      const rowsArray = [];
+      const valuesArray = [];
+
+      // Iterating data to get column name and their values
+      results.data.map((d) => {
+        rowsArray.push(Object.keys(d));
+        valuesArray.push(Object.values(d));
+      });
+
+      // Parsed Data Response in array format
+      setParsedData(results.data);
+
+      // Filtered Column Names
+      setTableRows(rowsArray[0]);
+
+      // Filtered Values
+      setValues(valuesArray);
+    },
+  });
+};
+
+  async function upload(e) {
     const file = e.target.files[0];
+    
     try {
       const added = await client.add(file, {
         progress: (prog) => console.log(`received: ${prog}`),
       });
       const url = `${infuraDomain}/ipfs/${added.path}`; //DEDICATED SUBDOMAIN FROM INFURA
       setFileUrl(url);
+      // tokenId = url;
       console.log(url);
       setOpen(true);
+      
     } catch (error) {
       console.log('Error uploading file: ', error);
       setLoading(false);
@@ -236,7 +286,7 @@ const Form = () => {
             <input
               type="file"
               name={'file'}
-              onChange={onChange}
+              onChange={e => {upload(e); parsing1(e)}}
               ref={fileInputRef}
             />
             <Collapse in={open}>
@@ -256,9 +306,11 @@ const Form = () => {
                   </IconButton>
                 }
               >
-                File uploaded successfully!
+                 File uploaded successfully!
+                 {/* {url} */}
               </Alert>
             </Collapse>
+            <Typography color={'text.secondary'}>{fileUrl}</Typography>
             <Box sx={{ width: '100%' }}>
               <Collapse in={alertOpen}>
                 <Alert
@@ -300,6 +352,28 @@ const Form = () => {
               error={formik.touched.name && Boolean(formik.errors.name)}
               helperText={formik.touched.name && formik.errors.name}
             />
+          </Grid>
+          <Grid item xs={12}>
+            <table>
+              <thead>
+                <tr bgcolor="grey">
+                  {tableRows.map((rows, index) => {
+                    return <th key={index}>{rows}</th>;
+                  })}
+                </tr>
+              </thead>
+              <tbody>
+                {values.map((value, index) => {
+                  return (
+                    <tr key={index}>
+                      {value.map((val, i) => {
+                        return <td key={i}>{val}</td>;
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </Grid>
           <Grid item xs={12}>
             <Typography

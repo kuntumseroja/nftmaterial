@@ -10,6 +10,15 @@ import PortfolioGrid from 'components/PortfolioGrid';
 import axios from 'axios';
 import { ethers } from 'ethers';
 import Material from 'contracts/Material.sol/Material.json';
+// import Papa from "papaparse";
+
+// const [parsedData, setParsedData] = useState([]);
+
+  //State to store table Column name
+// const [tableRows, setTableRows] = useState([]);
+
+  //State to store the values
+// const [values, setValues] = useState([]);
 
 const AllNfts = () => {
   const theme = useTheme();
@@ -40,6 +49,7 @@ const AllNfts = () => {
           price,
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
+          // txHash: i.hash,
           owner: i.owner,
           image: meta.data.image,
           name: meta.data.name,
@@ -53,6 +63,7 @@ const AllNfts = () => {
           mtlot: meta.data.mtlot,
           mtspecimen: meta.data.mtspecimen,
           address: meta.data.image,
+          // tokenNft: i.tokenId,
         };
         return item;
       }),
