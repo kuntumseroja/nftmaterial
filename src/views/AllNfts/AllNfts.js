@@ -6,7 +6,7 @@ import Main from 'layouts/Main';
 import Container from 'components/Container';
 import Contact from 'components/Contact';
 import PortfolioGrid from 'components/PortfolioGrid';
-import CsvViewer from 'components/Csv-viewer';
+import CsvViewer from 'components/Csv-Viewer';
 
 import axios from 'axios';
 import { ethers } from 'ethers';
