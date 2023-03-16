@@ -6,6 +6,7 @@ import Main from 'layouts/Main';
 import Container from 'components/Container';
 import Contact from 'components/Contact';
 import PortfolioGrid from 'components/PortfolioGrid';
+import CsvViewer from 'components/Csv-viewer';
 
 import axios from 'axios';
 import { ethers } from 'ethers';
@@ -53,7 +54,7 @@ const AllNfts = () => {
           mtlot: meta.data.mtlot,
           mtspecimen: meta.data.mtspecimen,
           address: meta.data.image,
-          tokenURI,
+          tokenURI, 
         };
         return item;
       }),
