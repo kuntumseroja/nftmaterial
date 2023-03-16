@@ -180,7 +180,9 @@ const FeaturedNfts = ({ data = [] }) => {
                   </CardContent>
                   <Box flexGrow={1} />
                   <CardActions sx={{ justifyContent: 'flex-end' }}>
-                    <Button>Link to NFT</Button>
+                    <Button href={item.address}>  
+                        Link to NFT
+                      </Button>
                   </CardActions>
                 </Box>
               </Box>

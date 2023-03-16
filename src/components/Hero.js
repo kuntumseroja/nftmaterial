@@ -21,7 +21,7 @@ const Hero = ({ title }) => {
         </Typography> 
         */}
         <Typography
-          variant="h3"
+          variant="h4"
           color="text.primary"
           align={'center'}
           sx={{

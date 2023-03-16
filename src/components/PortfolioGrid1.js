@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -13,23 +13,10 @@ import LinkIcon from '@mui/icons-material/Link';
 import Link from '@mui/material/Link';
 import Papa from "papaparse";
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
-import CsvViewer from 'components/Csv-Viewer';
 
 import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 import Material from 'contracts/Material.sol/Material.json';
-import { Dialog, DialogActions, DialogContent, DialogTitle, List, ListItem, ListItemText } from '@mui/material';
-
-// const [openModal1, setOpenModal1] = useState(false);
-// const handleClickOpen = async (item.address) => {
-//   setSelectedHash(item.address);
-//   const response = {item.address};
-//   const parsedData = Papa.parse(response.data, { header: true, skipEmptyLines: true });
-//   setCsvData(parsedData.data);
-//   setOpenModal1(true);
-// };
-
-
 
 const PortfolioGrid = ({ data = [], buttonShow }) => {
   const theme = useTheme();
@@ -97,12 +84,6 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
   //       },
   //     });
   //   }
-  const [open, setOpen] = useState([]);
-  const handleOpenDialog = (i, openState) => {
-    const newOpen = open.slice();
-    newOpen[i] = openState;
-    setOpen(newOpen);
-  };
 
   return (
     <Box>
@@ -181,7 +162,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   </Typography>
                   <Typography variant={'subtitle2'} color="text.secondary">
                       <Link href={`https://mumbai.polygonscan.com/address/${item.seller}`} underline="none">
-                        Link to creator address
+                        Link to creator address 
                       </Link>
                   </Typography>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
@@ -257,7 +238,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Specimen: {item.mtspecimen} tes uri {item.address}
+                    Material Specimen: {item.mtspecimen}
                     </Typography>
                   </Box>
                
@@ -275,24 +256,15 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                     >
                       <LinkIcon />
                     </Box>
-                    <Box
-                      component={ListItem}
-                      button
-                      onClick={() => handleOpenDialog(i, true)}
-                      sx={{ flexDirection: 'column', alignItems: 'flex-start' }}
-                       >
-                      <Typography variant="subtitle2">DataSheet NFT:</Typography>
-                      <Typography variant="subtitle2">{item.address}</Typography>
-                    </Box>
-                    {/* <Typography variant={'subtitle2'} color="text.secondary"> */}
+                    <Typography variant={'subtitle2'} color="text.secondary">
                       {/* <Link href={item.address} underline="none">
                         Link to NFT
                       </Link> */}
 
-                      {/* <Link href={item.tokenURI} underline="none">
-                        Link to NFT tokenURI  
+                      <Link href={`/Single/${item.address}`} underline="none">
+                        Link to NFT
                       </Link>
-                    </Typography> */}
+                    </Typography>
                   </Box>
 
 
@@ -322,22 +294,8 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
               </Box>
             </Box>
           </Grid>
-))}
+        ))}
       </Grid>
-
-      {/* //new */}
-      {data.map((item, i) => (
-        <Dialog key={i} open={open[i]} onClose={() => handleOpenDialog(i, false)} fullWidth maxWidth="md">
-          <DialogTitle>DataSheet {item.name}-{item.address}</DialogTitle>
-          <DialogContent>
-            <CsvViewer fileUrl={item.address} />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={() => handleOpenDialog(i, false)}>Close</Button>
-          </DialogActions>
-        </Dialog>
-      ))}
-      {/* new */}
     </Box>
   );
 };

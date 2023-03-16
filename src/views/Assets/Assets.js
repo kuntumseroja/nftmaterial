@@ -12,6 +12,7 @@ import axios from 'axios';
 import Web3Modal from 'web3modal';
 import Material from '/artifacts/contracts/Material.sol/Material.json';
 import { ethers } from 'ethers';
+import Papa from 'papaparse';
 
 export default function CreateItem() {
   const theme = useTheme();
@@ -49,10 +50,14 @@ export default function CreateItem() {
         };
         return item;
       }),
+      
     );
+
     setNfts(items);
     setLoaded(true);
   }
+
+  
   useEffect(() => {
     loadNFTs();
   }, []);
