@@ -257,7 +257,7 @@ const PortfolioGrid = ({ data = [], buttonShow }) => {
                   </Box>
                   <Box display={'flex'} alignItems={'center'} marginY={2}>
                     <Typography variant={'subtitle2'} color="text.secondary">
-                    Material Specimen: {item.mtspecimen} tes uri {item.address}
+                    Material Specimen: {item.mtspecimen} 
                     </Typography>
                   </Box>
                
